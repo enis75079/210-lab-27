@@ -26,20 +26,23 @@ int main() {
         cout << "4. Decrease Friendship" << endl;
         cout << "5. Search for Villager" << endl;
         cout << "6. Exit" << endl;
+        cout << "Choice: ";
         cin >> userChoice;
+        cout << endl;
+
         if (userChoice == 1) {
             cout << "Villager's Name: ";
             cin >> name;
-            cout << endl;
-            cout << "Villager's Species: ";
+            cout << "\nVillager's Species: ";
             cin >> species;
-            cout << endl;
-            cout << "Villager's Catchphrase: ";
+            cout << "\nVillager's Catchphrase: ";
             cin >> catchphrase;
-            cout << endl;
-            cout << " Friendship Level: ";
+            cout << "\nFriendship Level: ";
             cin >> friendshipLvl;
-            cout << endl;
+        } else if (userChoice == 5) {
+            cout << "Search Villager: ";
+            cin >> name;
+            auto it = villager.find(name);
         }
     }
     // insert elements into the map
