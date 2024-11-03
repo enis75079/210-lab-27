@@ -10,9 +10,15 @@ Naveen Islam
 #include <vector>
 using namespace std;
 
+struct Villager {
+    int friendshipLvl;
+    string species;
+    string catchphrase;
+};
+
 int main() {
     // declarations
-    map<string, vector<string>> villagerColors;
+    map<string, tuple<string>> villagerColors;
 
     // insert elements into the map
     // note how the right-hand side of the assignment are the vector elements
