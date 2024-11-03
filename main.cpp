@@ -7,14 +7,15 @@ Naveen Islam
 */
 #include <iostream>
 #include <map>
-#include <vector>
+#include <vector> 
+#include <tuple>
 using namespace std;
 
 int main() {
     // declarations
     map<string, tuple<int, string, string>> villager;
     int userChoice;
-    
+
     string name;
     string species;
     string catchphrase;
@@ -44,14 +45,11 @@ int main() {
             cout << "Search Villager: ";
             cin >> name;
             auto it = villager.find(name);
-            if (it != villager.end()) {  // the iterator points to beyond the end of the map
-                cout << "\nFound " << name;
-            for (const auto& [vName, vTuple] : villager) {
-                cout << vName << endl;
-            }  
-            cout << endl;
+
+            if (it != villager.end()) {
+                cout << "\nFound " << name << get<0>(it->second);
+            }
         }
-    }
     // insert elements into the map
     // note how the right-hand side of the assignment are the vector elements
     /*villager["Audie"] = {"Orange", "Yellow", "Red"};
