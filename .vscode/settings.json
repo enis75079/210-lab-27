@@ -8,6 +8,7 @@
         "xiosbase": "cpp",
         "xstring": "cpp",
         "xtree": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }

@@ -14,6 +14,7 @@ int main() {
     // declarations
     map<string, tuple<int, string, string>> villager;
     int userChoice;
+    
     string name;
     string species;
     string catchphrase;
@@ -45,8 +46,9 @@ int main() {
             auto it = villager.find(name);
             if (it != villager.end()) {  // the iterator points to beyond the end of the map
                 cout << "\nFound " << name;
-            for (auto [vName, vTuple] : villager)  // range loop to traverse the value/vector
-                cout << vName << " ";
+            for (const auto& [vName, vTuple] : villager) {
+                cout << vName << endl;
+            }  
             cout << endl;
         }
     }
