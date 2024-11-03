@@ -14,6 +14,10 @@ int main() {
     // declarations
     map<string, tuple<int, string, string>> villager;
     int userChoice;
+    string name;
+    string species;
+    string catchphrase;
+    int friendshipLvl;
 
     while (userChoice != 6) {
         cout << "1. Add Villager" << endl;
@@ -24,7 +28,18 @@ int main() {
         cout << "6. Exit" << endl;
         cin >> userChoice;
         if (userChoice == 1) {
-
+            cout << "Villager's Name: ";
+            cin >> name;
+            cout << endl;
+            cout << "Villager's Species: ";
+            cin >> species;
+            cout << endl;
+            cout << "Villager's Catchphrase: ";
+            cin >> catchphrase;
+            cout << endl;
+            cout << " Friendship Level: ";
+            cin >> friendshipLvl;
+            cout << endl;
         }
     }
     // insert elements into the map
