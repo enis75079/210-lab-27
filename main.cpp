@@ -50,6 +50,7 @@ int main() {
                 cout << "\nFound " << name << get<0>(it->second);
             }
         }
+    }
     // insert elements into the map
     // note how the right-hand side of the assignment are the vector elements
     /*villager["Audie"] = {"Orange", "Yellow", "Red"};
