@@ -13,10 +13,23 @@ using namespace std;
 int main() {
     // declarations
     map<string, tuple<int, string, string>> villager;
+    int userChoice;
 
+    while (userChoice != 6) {
+        cout << "1. Add Villager" << endl;
+        cout << "2. Delete Villager" << endl;
+        cout << "3. Increase Friendship" << endl;
+        cout << "4. Decrease Friendship" << endl;
+        cout << "5. Search for Villager" << endl;
+        cout << "6. Exit" << endl;
+        cin >> userChoice;
+        if (userChoice == 1) {
+
+        }
+    }
     // insert elements into the map
     // note how the right-hand side of the assignment are the vector elements
-    villager["Audie"] = {"Orange", "Yellow", "Red"};
+    /*villager["Audie"] = {"Orange", "Yellow", "Red"};
     villager["Raymond"] = {"Black", "Gray", "White"};
     villager.insert({"Marshal", {"Blue", "White", "Black"}});
 
@@ -58,7 +71,7 @@ int main() {
     // report size, clear, report size again to confirm map operations
     cout << "\nSize before clear: " << villager.size() << endl;
     villager.clear();
-    cout << "Size after clear: " << villager.size() << endl;
+    cout << "Size after clear: " << villager.size() << endl;*/
 
     return 0;
 }
