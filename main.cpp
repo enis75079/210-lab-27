@@ -43,6 +43,12 @@ int main() {
             cout << "Search Villager: ";
             cin >> name;
             auto it = villager.find(name);
+            if (it != villager.end()) {  // the iterator points to beyond the end of the map
+                                       // if searchKey is not found
+            cout << "\nFound " << name << "'s favorite colors: ";
+            for (auto color : it->second)  // range loop to traverse the value/vector
+                cout << color << " ";
+            cout << endl;
         }
     }
     // insert elements into the map
