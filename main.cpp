@@ -15,7 +15,7 @@ using namespace std;
 int main() {
     // declarations
     map<string, tuple<int, string, string>> villager;
-    int userChoice;
+    int userChoice = 0;
 
 
     while (userChoice != 6) {
@@ -42,8 +42,9 @@ int main() {
             cin >> catchphrase;
             cout << "\nFriendship Level: ";
             cin >> friendshipLvl;
+            cin.ignore();
 
-            villager[name] = make_tuple(species, catchphrase, friendshipLvl);
+            villager[name] = make_tuple(friendshipLvl, species, catchphrase);
 
         } else if (userChoice == 5) {
             string name;
