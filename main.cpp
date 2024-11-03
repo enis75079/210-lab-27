@@ -9,6 +9,7 @@ Naveen Islam
 #include <map>
 #include <vector> 
 #include <tuple>
+#include <string>
 using namespace std;
 
 int main() {
@@ -16,10 +17,6 @@ int main() {
     map<string, tuple<int, string, string>> villager;
     int userChoice;
 
-    string name;
-    string species;
-    string catchphrase;
-    int friendshipLvl;
 
     while (userChoice != 6) {
         cout << "1. Add Villager" << endl;
@@ -33,6 +30,10 @@ int main() {
         cout << endl;
 
         if (userChoice == 1) {
+            string name;
+            string species;
+            string catchphrase;
+            int friendshipLvl;
             cout << "Villager's Name: ";
             cin >> name;
             cout << "\nVillager's Species: ";
@@ -41,13 +42,20 @@ int main() {
             cin >> catchphrase;
             cout << "\nFriendship Level: ";
             cin >> friendshipLvl;
+
+            villager[name] = make_tuple(species, catchphrase, friendshipLvl);
+
         } else if (userChoice == 5) {
+            string name;
             cout << "Search Villager: ";
-            cin >> name;
+            getline(cin, name);
+            cout << endl;
             auto it = villager.find(name);
 
             if (it != villager.end()) {
                 cout << "\nFound " << name << get<0>(it->second);
+            } else {
+                cout << "Villager does not exist." << endl;
             }
         }
     }
