@@ -50,7 +50,7 @@ int main() {
 
         } else if (userChoice == 2) {
             cout << "Delete Villager: ";
-            getline(cin, name);
+            cin >> name;
             if (villager.erase(name)) {
                 cout << "Villager " << name << " has been deleted." << endl; 
                 cout << endl;
@@ -58,8 +58,18 @@ int main() {
                 cout << name << " not found" << endl;
                 cout << endl;
             }
+        } else if (userChoice == 3 || userChoice == 4) {
+            if (userChoice == 3) {
+                cout << "Which villager would you like to increase friendship with: ";
+                cin >> name;
+                auto it = villager.find(name);
+                if (it != villager.end()) {
+                    int& vLvl = get<2>(it->second);
+                }
+            }
 
-        } else if (userChoice == 5) {
+        }
+         else if (userChoice == 5) {
             cout << "Search Villager: ";
             cin >> name;
             cout << endl;
@@ -69,7 +79,7 @@ int main() {
                 cout << "\nFound: " << name << "[" << get<0>(it->second) << ", " << get<1>(it->second) << ", " << get<2>(it->second) << "]" << endl;
                 cout << endl;
             } else {
-                cout << "Villager does not exist." << endl;
+                cout << "Villager " << name << " does not exist." << endl;
             }
         }
     }
