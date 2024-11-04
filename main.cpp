@@ -16,6 +16,10 @@ int main() {
     // declarations
     map<string, tuple<int, string, string>> villager;
     int userChoice = 0;
+    string name;
+    string species;
+    string catchphrase;
+    int friendshipLvl;
 
 
     while (userChoice != 6) {
@@ -30,10 +34,6 @@ int main() {
         cout << endl;
 
         if (userChoice == 1) {
-            string name;
-            string species;
-            string catchphrase;
-            int friendshipLvl;
             cout << "Villager's Name: ";
             cin.ignore();
             getline(cin, name);
@@ -48,8 +48,18 @@ int main() {
             villager[name] = make_tuple(friendshipLvl, species, catchphrase);
             cout << name << "added." << endl;
 
+        } else if (userChoice == 2) {
+            cout << "Delete Villager: ";
+            getline(cin, name);
+            if (villager.erase(name)) {
+                cout << "Villager " << name << " has been deleted." << endl; 
+                cout << endl;
+            } else {
+                cout << name << " not found" << endl;
+                cout << endl;
+            }
+
         } else if (userChoice == 5) {
-            string name;
             cout << "Search Villager: ";
             cin >> name;
             cout << endl;
