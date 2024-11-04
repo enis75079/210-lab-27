@@ -59,14 +59,35 @@ int main() {
                 cout << endl;
             }
         } else if (userChoice == 3 || userChoice == 4) {
-            if (userChoice == 3) {
-                cout << "Which villager would you like to increase friendship with: ";
-                cin >> name;
-                auto it = villager.find(name);
-                if (it != villager.end()) {
-                    int& vLvl = get<2>(it->second);
+            cout << "Villager Name: ";
+            cin >> name;
+            auto it = villager.find(name);
+            if (it != villager.end()) {
+                if (userChoice == 3) {
+                    int& vLvl = get<0>(it->second);
+                    if (vLvl < 10) {
+                        vLvl++;
+                        cout << "Your friendship with " << name << " has increased to " << vLvl << "." << endl;
+                        cout << endl;
+                    } else {
+                        cout << "You have reached maximum friendship points with this villager." << endl;
+                        cout << endl;
+                        break;
+                    }
+                } else if (userChoice == 4) {
+                    int& vLvl = get<0>(it->second);
+                    if (vLvl > 0) {
+                        vLvl--;
+                        cout << "Your friendship with " << name << " has decreased to " << vLvl << "." << endl;
+                        cout << endl;
+                    } else {
+                        cout << "You are at 0 friendship with this villager." << endl;
+                        cout << endl;
+                        break;
+                    }
                 }
             }
+            
 
         }
          else if (userChoice == 5) {
