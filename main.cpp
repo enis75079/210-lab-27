@@ -50,7 +50,7 @@ int main() {
         } else if (userChoice == 5) {
             string name;
             cout << "Search Villager: ";
-            getline(cin, name);
+            cin >> name;
             cout << endl;
             auto it = villager.find(name);
 
