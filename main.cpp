@@ -46,6 +46,7 @@ int main() {
             cin.ignore();
 
             villager[name] = make_tuple(friendshipLvl, species, catchphrase);
+            cout << name << "added." << endl;
 
         } else if (userChoice == 5) {
             string name;
@@ -55,7 +56,8 @@ int main() {
             auto it = villager.find(name);
 
             if (it != villager.end()) {
-                cout << "\nFound " << name << get<0>(it->second);
+                cout << "\nFound: " << name << "[" << get<0>(it->second) << ", " << get<1>(it->second) << ", " << get<2>(it->second) << "]" << endl;
+                cout << endl;
             } else {
                 cout << "Villager does not exist." << endl;
             }
