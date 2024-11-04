@@ -35,11 +35,11 @@ int main() {
             string catchphrase;
             int friendshipLvl;
             cout << "Villager's Name: ";
-            cin >> name;
+            getline(cin, name);
             cout << "\nVillager's Species: ";
-            cin >> species;
+            getline(cin, species);
             cout << "\nVillager's Catchphrase: ";
-            cin >> catchphrase;
+            getline(cin, catchphrase);
             cout << "\nFriendship Level: ";
             cin >> friendshipLvl;
             cin.ignore();
