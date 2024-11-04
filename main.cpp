@@ -74,7 +74,7 @@ int main() {
                     } else {
                         cout << "You have reached maximum friendship points with this villager." << endl;
                         cout << endl;
-                        break;
+                        
                     }
                 } else if (userChoice == 4) {
                     int& vLvl = get<0>(it->second);
@@ -85,7 +85,7 @@ int main() {
                     } else {
                         cout << "You are at 0 friendship with this villager." << endl;
                         cout << endl;
-                        break;
+                        
                     }
                 }
             }
@@ -111,7 +111,7 @@ int main() {
 
 void villagerOutput (const map<string, tuple<int, string, string>>& villager) {
     cout <<"Villager details: " << endl;
-    for (const auto& [name, vInfo] : villager) {
-        cout << name << "[" << get<0>(it->second) << ", " << get<1>(it->second) << ", " << get<2>(it->second) << "]" << endl;
+    for (const auto& vProfile : villager) {
+        cout << vProfile.first << "[" << get<0>(vProfile.second) << ", " << get<1>(vProfile.second) << ", " << get<2>(vProfile.second) << "]" << endl;
     }
 }
