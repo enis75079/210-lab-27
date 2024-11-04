@@ -109,6 +109,9 @@ int main() {
     return 0;
 }
 
-void villagerOutput (const map<string, tuple<int, string, string>>&) {
-    
+void villagerOutput (const map<string, tuple<int, string, string>>& villager) {
+    cout <<"Villager details: " << endl;
+    for (const auto& [name, vInfo] : villager) {
+        cout << name << "[" << get<0>(it->second) << ", " << get<1>(it->second) << ", " << get<2>(it->second) << "]" << endl;
+    }
 }
